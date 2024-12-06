@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预约结果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f7f7f7;
+        }
+        .delete-btn {
+            padding: 5px 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: #cc0000;
+        }
+        .export-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .export-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>预约信息记录</h2>
+    <div class="success-message">预约成功！</div>
+    <button class="export-btn" onclick="exportTable()">导出为表格</button>
+    <table id="result-table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>学生年级</th>
+                <th>辅导科目</th>
+                <th>辅导次数</th>
+                <th>辅导时长</th>
+                <th>记录时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 动态插入记录 -->
+        </tbody>
+    </table>
+
+    <script>
+        // 删除行功能
+        function deleteRow(index) {
+            let records = JSON.parse(localStorage.getItem('records')) || [];
+            records.splice(index, 1);
+            localStorage.setItem('records', JSON.stringify(records));
+            loadRecords();
+        }
+    
+        // 加载记录到表格
+        function loadRecords() {
+            const tableBody = document.querySelector('#result-table tbody');
+            tableBody.innerHTML = ''; // 清空表格内容
+            const records = JSON.parse(localStorage.getItem('records')) || [];
+            records.forEach((record, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${record.name}</td>
+                    <td>${record.phone}</td>
+                    <td>${record.grade}</td>
+                    <td>${record.subject}</td>
+                    <td>${record.frequency}</td>
+                    <td>${record.duration}</td>
+                    <td>${record.timestamp}</td>
+                    <td><button class="delete-btn" onclick="deleteRow(${index})">删除</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // 导出表格为 CSV
+        function exportTable() {
+            const records = JSON.parse(localStorage.getItem('records')) || [];
+            if (records.length === 0) {
+                alert('没有可导出的记录！');
+                return;
+            }
+
+            let csvContent = '姓名,手机号,学生年级,辅导科目,辅导次数,辅导时长,记录时间\n';
+
+            records.forEach(record => {
+                csvContent += `${record.name},${record.phone},${record.grade},${record.subject},${record.frequency},${record.duration},${record.timestamp}\n`;
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', '预约信息.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    
+        // 页面加载时显示记录
+        document.addEventListener('DOMContentLoaded', loadRecords);
+    </script>
+
+</body>
+</html>
