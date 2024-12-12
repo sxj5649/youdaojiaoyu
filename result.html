@@ -69,7 +69,8 @@
                 <th>学生年级</th>
                 <th>辅导科目</th>
                 <th>辅导次数</th>
-                <th>辅导时长</th>
+                <th>地址</th>
+                <th>其他要求</th>
                 <th>记录时间</th>
                 <th>操作</th>
             </tr>
@@ -101,7 +102,8 @@
                     <td>${record.grade}</td>
                     <td>${record.subject}</td>
                     <td>${record.frequency}</td>
-                    <td>${record.duration}</td>
+                    <td>${record.address}</td>
+                    <td>${record.otherRequirements}</td>
                     <td>${record.timestamp}</td>
                     <td><button class="delete-btn" onclick="deleteRow(${index})">删除</button></td>
                 `;
@@ -117,10 +119,10 @@
                 return;
             }
 
-            let csvContent = '姓名,手机号,学生年级,辅导科目,辅导次数,辅导时长,记录时间\n';
+            let csvContent = '姓名,手机号,学生年级,辅导科目,辅导次数,地址,其他要求,记录时间\n';
 
             records.forEach(record => {
-                csvContent += `${record.name},${record.phone},${record.grade},${record.subject},${record.frequency},${record.duration},${record.timestamp}\n`;
+                csvContent += `${record.name},${record.phone},${record.grade},${record.subject},${record.frequency},${record.address},${record.otherRequirements},${record.timestamp}\n`;
             });
 
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });

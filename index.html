@@ -80,7 +80,16 @@
 			.dropdown-options div:hover {
 				background-color: #f0f0f0;
 			}
+			
 		</style>
+		<style>
+		    h2 {
+		        text-align: center; /* 水平居中 */
+		        margin-top: 20px; /* 设置上方的外边距 */
+		    }
+		</style>
+
+		
 	</head>
 
 	<body>
@@ -89,75 +98,84 @@
 				<img src="static/picture/banner.jpg" class="fn-left" alt="">
 			</div>
 			<div class="apply-box">
-				<h2>辅导预约</h2>
-
-				<!-- 姓名和手机号 -->
-				<input type="text" placeholder="请输入您的姓名"
-					style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
-				<input type="text" placeholder="请输入您的手机号"
-					style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
-
-
-				<!-- 学生年级 -->
-				<div class="dropdown" id="grade-dropdown">请选择学生年级</div>
-				<div class="dropdown-options" id="grade-options">
-					<div>幼儿小班</div>
-					<div>幼儿中班</div>
-					<div>幼儿大班</div>
-					<div>小学一年级</div>
-					<div>小学二年级</div>
-					<div>小学三年级</div>
-					<div>小学四年级</div>
-					<div>小学五年级</div>
-					<div>小学六年级</div>
-					<div>初一</div>
-					<div>初二</div>
-					<div>初三</div>
-					<div>高一</div>
-					<div>高二</div>
-					<div>高三</div>
-				</div>
-
-				<!-- 辅导科目 -->
-				<div class="dropdown" id="subject-dropdown">请选择辅导科目</div>
-				<div class="dropdown-options" id="subject-options">
-					<div>语文</div>
-					<div>数学</div>
-					<div>英语</div>
-					<div>物理</div>
-					<div>化学</div>
-					<div>生物</div>
-					<div>地理</div>
-					<div>历史</div>
-					<div>政治</div>
-					<div>钢琴陪练</div>
-					<div>全科</div>
-					<div>其他</div>
-				</div>
-
-				<!-- 辅导次数 -->
-				<div class="dropdown" id="frequency-dropdown">请选择辅导次数</div>
-				<div class="dropdown-options" id="frequency-options">
-					<div>每周一次</div>
-					<div>每周两次</div>
-					<div>每周三次</div>
-					<div>每周四次</div>
-					<div>每周五次</div>
-					<div>每周六次</div>
-					<div>每周七次</div>
-				</div>
-
-				<!-- 辅导时长 -->
-				<div class="dropdown" id="duration-dropdown">请选择辅导时长</div>
-				<div class="dropdown-options" id="duration-options">
-					<div>一次2小时</div>
-					<div>一次4小时</div>
-					<div>一次6小时</div>
-					<div>一次8小时</div>
-				</div>
-
-				<div class="submit-btn">免费预约</div>
+			    <h2>辅导预约</h2>
+			
+			    <!-- 姓名 -->
+			    <label for="name-input">姓名：</label>
+			    <input id="name-input" type="text" placeholder="请输入您的姓名"
+			           style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 手机号 -->
+			    <label for="phone-input">手机号：</label>
+			    <input id="phone-input" type="text" placeholder="请输入您的手机号"
+			           style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 学生年级 -->
+			    <label for="grade-dropdown">学生年级：</label>
+			    <div class="dropdown" id="grade-dropdown" style="background-color: #f9f9f9; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">请选择学生年级</div>
+			    <div class="dropdown-options" id="grade-options">
+			        <div>幼儿小班</div>
+			        <div>幼儿中班</div>
+			        <div>幼儿大班</div>
+			        <div>小学一年级</div>
+			        <div>小学二年级</div>
+			        <div>小学三年级</div>
+			        <div>小学四年级</div>
+			        <div>小学五年级</div>
+			        <div>小学六年级</div>
+			        <div>初一</div>
+			        <div>初二</div>
+			        <div>初三</div>
+			        <div>高一</div>
+			        <div>高二</div>
+			        <div>高三</div>
+			    </div>
+			
+			    <!-- 科目 -->
+			    <label for="subject-dropdown">科目：</label>
+			    <div class="dropdown" id="subject-dropdown" style="background-color: #f9f9f9; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">请选择辅导科目</div>
+			    <div class="dropdown-options" id="subject-options">
+			        <div>语文</div>
+			        <div>数学</div>
+			        <div>英语</div>
+			        <div>物理</div>
+			        <div>化学</div>
+			        <div>生物</div>
+			        <div>地理</div>
+			        <div>历史</div>
+			        <div>政治</div>
+			        <div>钢琴陪练</div>
+			        <div>全科</div>
+			        <div>其他</div>
+			    </div>
+			
+			    <!-- 辅导次数 -->
+			    <label for="frequency-dropdown">辅导次数：</label>
+			    <div class="dropdown" id="frequency-dropdown" style="background-color: #f9f9f9; border: 1px solid #ccc; padding: 10px; margin-bottom: 15px;">请选择辅导次数</div>
+			    <div class="dropdown-options" id="frequency-options">
+			        <div>每周一次</div>
+			        <div>每周两次</div>
+			        <div>每周三次</div>
+			        <div>每周四次</div>
+			        <div>每周五次</div>
+			        <div>每周六次</div>
+			        <div>每周七次</div>
+			    </div>
+			
+			    <!-- 地址 -->
+			    <label for="address-input">地址：</label>
+			    <input id="address-input" type="text" placeholder="北京市XX区"
+			           style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 其他要求 -->
+			    <label for="other-requirements-input">其他要求：</label>
+			    <input id="other-requirements-input" type="text" placeholder="可以输入其他要求"
+			           style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 提交按钮 -->
+			    <div class="submit-btn">免费预约</div>
 			</div>
+
 
 			<div class="wk_index_banner good  wk_grey_banner fn-clear" style="padding-bottom:35px;">
 				<h2 class="title">好成绩，选金牌名师</h2>
@@ -187,10 +205,7 @@
 					</div>
 
 
-					<div class="wk_index_banner school fn-clear">
-						 <button class="hidden-button">211/985高校签约合作</button>
-						<!-- <img src="static/picture/school.png" class="fn-left" alt="" > -->
-					</div>
+					
 					<div class="wk_index_banner  fn-clear" style="padding-top:0px!important">
 						<img src="static/picture/cooperate.jpg" class="fn-left" alt="">
 					</div>
@@ -209,6 +224,10 @@
 						<!-- 背景遮罩 -->
 						<div id="popup-overlay"
 							style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
+						</div>
+						<div class="wk_index_banner school fn-clear">
+							 <button class="hidden-button">管理员登录</button>
+							<!-- <img src="static/picture/school.png" class="fn-left" alt="" > -->
 						</div>
 
 						<p style="font-size: .5rem!important;color: #818181;line-height: 1rem!important">
@@ -339,46 +358,50 @@
 					});
 				</script>
 				<script>
-					document.querySelector('.submit-btn').addEventListener('click', function() {
-						const name = document.querySelector('input[placeholder="请输入您的姓名"]').value.trim();
-						const phone = document.querySelector('input[placeholder="请输入您的手机号"]').value.trim();
-						const grade = document.querySelector('#grade-dropdown').textContent.trim();
-						const subject = document.querySelector('#subject-dropdown').textContent.trim();
-						const frequency = document.querySelector('#frequency-dropdown').textContent.trim();
-						const duration = document.querySelector('#duration-dropdown').textContent.trim();
-
-						if (!name || !phone || grade === '请选择学生年级' || subject === '请选择辅导科目' || frequency === '请选择辅导次数' ||
-							duration === '请选择辅导时长') {
-							alert('请完整填写所有信息');
-							return;
-						}
-
-						// 生成当前时间
-						const timestamp = new Date().toLocaleString();
-
-						// 构造数据对象
-						const data = {
-							name,
-							phone,
-							grade,
-							subject,
-							frequency,
-							duration,
-							timestamp
-						};
-
-						// 将数据保存到 localStorage
-						let records = JSON.parse(localStorage.getItem('records')) || [];
-						records.push(data);
-						localStorage.setItem('records', JSON.stringify(records));
-
-						// 提示成功
-						alert('预约成功！');
-
-						// 跳转到 result.html
-						// window.location.href = 'result.html';
-					});
+				    document.querySelector('.submit-btn').addEventListener('click', function() {
+				        const name = document.querySelector('input[placeholder="请输入您的姓名"]').value.trim();
+				        const phone = document.querySelector('input[placeholder="请输入您的手机号"]').value.trim();
+				        const grade = document.querySelector('#grade-dropdown').textContent.trim();
+				        const subject = document.querySelector('#subject-dropdown').textContent.trim();
+				        const frequency = document.querySelector('#frequency-dropdown').textContent.trim();
+				        const address = document.querySelector('input[placeholder="北京市XX区"]').value.trim();
+				        const otherRequirements = document.querySelector('input[placeholder="可以输入其他要求"]').value.trim();
+				
+				        // 校验输入
+				        if (!name || !phone || grade === '请选择学生年级' || subject === '请选择辅导科目' || 
+				            frequency === '请选择辅导次数' || !address) {
+				            alert('请完整填写所有必填信息');
+				            return;
+				        }
+				
+				        // 生成当前时间
+				        const timestamp = new Date().toLocaleString();
+				
+				        // 构造数据对象
+				        const data = {
+				            name,
+				            phone,
+				            grade,
+				            subject,
+				            frequency,
+				            address,
+				            otherRequirements: otherRequirements || '无', // 如果未填写其他要求，默认显示为“无”
+				            timestamp
+				        };
+				
+				        // 将数据保存到 localStorage
+				        let records = JSON.parse(localStorage.getItem('records')) || [];
+				        records.push(data);
+				        localStorage.setItem('records', JSON.stringify(records));
+				
+				        // 提示成功
+				        alert('预约成功！');
+				
+				        // 可选：跳转到 result.html 页面
+				        // window.location.href = 'result.html';
+				    });
 				</script>
+
 
 
 				<script type="text/javascript" src="static/js/jquery.min.js"></script>
