@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>家教网_一对一在线辅导_一对一家教_中高考辅导班补习班请找【学而有道教育】</title>
+		<meta name="keywords" content="大学生家教，家教，上海家教，">
+		<meta name="description" content="学而有道教育名校学霸上门家教，在家让学霸辅导培优提分，成为下一个学霸不是梦，免费预约，效果好稳提分，欢迎通过学而有道教育移动端官网立即预约。">
+		<meta name="viewport"
+			content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="static/css/aui.css">
+		<link rel="stylesheet" type="text/css" href="static/css/common.css">
+		<link rel="stylesheet" type="text/css" href="static/css/single_mobile.css">
+		<link rel="stylesheet" type="text/css" href="static/css/iconfont.css">
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+			}
+			
+			 .hidden-button {
+			            font-size: 1.5em; /* 和 <h2> 的默认大小一致 */
+			            font-weight: bold; /* 保持 <h2> 默认加粗效果 */
+			            background: none; /* 移除背景色 */
+			            border: none; /* 移除边框 */
+			            color: #9f9f9f; /* 按钮文本颜色 */
+			            position: absolute;
+			            top: 50%;
+			            left: 50%;
+			            transform: translate(-50%, -50%); /* 将按钮自身的中心点移到视口中心 */
+			        }
+			
+			        .hidden-button:focus {
+			            outline: none; /* 点击后去掉默认的边框效果 */
+			        }
+
+			.apply-box {
+				padding: 20px;
+				max-width: 400px;
+				margin: auto;
+				background: #f7f7f7;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			input,
+			.dropdown {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 15px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				font-size: 16px;
+				position: relative;
+			}
+
+			.dropdown {
+				cursor: pointer;
+				background-color: #fff;
+			}
+
+			.dropdown-options {
+				display: none;
+				position: absolute;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				z-index: 10;
+				max-height: 200px;
+				overflow-y: auto;
+				width: 100%;
+			}
+
+			.dropdown-options div {
+				padding: 10px;
+				cursor: pointer;
+			}
+
+			.dropdown-options div:hover {
+				background-color: #f0f0f0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-box relative">
+			<div class="wk_index_banner fn-clear" style="padding-top:0px!important; margin-bottom: 20px;">
+				<img src="static/picture/banner.jpg" class="fn-left" alt="">
+			</div>
+			<div class="apply-box">
+			    <h2>辅导预约</h2>
+		
+			    <!-- 学生年级 -->
+			    <div class="dropdown" id="grade-dropdown">请选择学生年级</div>
+			    <div class="dropdown-options" id="grade-options">
+			        <div>幼儿小班</div>
+			        <div>幼儿中班</div>
+			        <div>幼儿大班</div>
+			        <div>小学一年级</div>
+			        <div>小学二年级</div>
+			        <div>小学三年级</div>
+			        <div>小学四年级</div>
+			        <div>小学五年级</div>
+			        <div>小学六年级</div>
+			        <div>初一</div>
+			        <div>初二</div> <!-- 八年级 -->
+			        <div>初三</div>
+			        <div>高一</div>
+			        <div>高二</div>
+			        <div>高三</div>
+			    </div>
+			
+			    <!-- 辅导科目 -->
+			    <div class="dropdown" id="subject-dropdown">请选择辅导科目</div>
+			    <div class="dropdown-options" id="subject-options">
+			        <div>语文</div>
+			        <div>数学</div>
+			        <div>英语</div>
+			        <div>物理</div>
+			        <div>化学</div>
+			        <div>生物</div>
+			        <div>地理</div>
+			        <div>历史</div>
+			        <div>政治</div>
+			        <div>钢琴陪练</div>
+			        <div>全科</div>
+			        <div>其他</div>
+			    </div>
+			
+			    <!-- 辅导次数 -->
+			    <div class="dropdown" id="frequency-dropdown">请选择辅导次数</div>
+			    <div class="dropdown-options" id="frequency-options">
+			        <div>每周一次</div>
+			        <div>每周两次</div>
+			        <div>每周三次</div>
+			        <div>每周四次</div>
+			        <div>每周五次</div>
+			        <div>每周六次</div>
+			        <div>每周七次</div>
+			    </div>
+			
+			    <!-- 地址输入 -->
+			    <input type="text" placeholder="请输入辅导地址"
+			        style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 要求输入 -->
+			    <input type="text" placeholder="请输入辅导要求（如教员性别不限等）"
+			        style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px; width: 100%; margin-bottom: 15px;">
+			
+			    <!-- 提交按钮 -->
+			    <div class="submit-btn">免费预约</div>
+			</div>
+
+
+			<div class="wk_index_banner good  wk_grey_banner fn-clear" style="padding-bottom:35px;">
+				<h2 class="title">好成绩，选金牌名师</h2>
+				<h2 class="title">------------------------------</h2>
+				<div class="swiper-box">
+					<div class="wk_teacher_swiper1">
+						<img src="static/picture/teacher2.png" alt="" class="fixHeight">
+						<div class="wk_teacher_item left">
+							<img src="static/picture/teacher1.png" alt="">
+						</div>
+						<div class="wk_teacher_item center">
+							<img src="static/picture/teacher2.png" alt="">
+						</div>
+						<div class="wk_teacher_item right">
+							<img src="static/picture/teacher3.png" alt="">
+						</div>
+					</div>
+
+
+					<div class="wk_arrow wk_arrow1 left"><</div>
+							<div class="wk_arrow wk_arrow1 right">></div>
+
+							<div class="buy-btn to_applly_btn" onclick="scrollToTop()">
+								立即预约
+							</div>
+
+					</div>
+
+
+					<div class="wk_index_banner school fn-clear">
+						 <button class="hidden-button">211/985高校签约合作</button>
+						<!-- <img src="static/picture/school.png" class="fn-left" alt="" > -->
+					</div>
+					<div class="wk_index_banner  fn-clear" style="padding-top:0px!important">
+						<img src="static/picture/cooperate.jpg" class="fn-left" alt="">
+					</div>
+					<div class="footer" style="text-align: center;">
+
+						<a id="contact-link" href="javascript:;"
+							style="font-size: 1rem!important; font-weight: bold!important;color: #818181;line-height: 1rem!important;text-decoration: underline">联系我们</a>
+						<!-- 图片弹出容器 -->
+						<div id="contact-popup"
+							style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; background: rgba(255, 255, 255, 1); padding: 10px; border: 1px solid #ccc;">
+							<img src="static/picture/ysstudent.jpg" alt="联系我们" style="max-width: 100%; height: auto;">
+							<button id="close-popup"
+								style="display: block; margin: 10px auto; padding: 5px 10px;">关闭</button>
+						</div>
+
+						<!-- 背景遮罩 -->
+						<div id="popup-overlay"
+							style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
+						</div>
+
+						<p style="font-size: .5rem!important;color: #818181;line-height: 1rem!important">
+							一切为了明天</p>
+						<p style="font-size: .5rem!important;color: #818181;line-height: 1rem!important">
+							Copyright©2014-2019
+							学而有道教育</p>
+					</div>
+				</div>
+				<div class="foot-box">
+					<div class="foot-bg aui-clearfix">
+						<div class="text">
+							<p>上门家教</p>
+							<p class="war">服务<b>一流</b>！</p>
+						</div>
+						<div class="btn to_applly_btn">快来预约吧！</div>
+					</div>
+					<img src="static/picture/maotouying.png" alt="">
+				</div>
+				<div class="yk_mask_box fn-hide">
+					<div class="yk_mask_inner yk_mask_inner1">
+						<img class="yk_close yk_close_btn" src="static/picture/yk_close1.png" alt="">
+						<div class="box box1">
+							<img class="erweima" src="static/picture/ysstudent.jpg" alt="">
+							<p class="marin-top">恭喜您成功注册学而有道教育</p>
+							<p>长按关注微信服务号，点击发布需求</p>
+						</div>
+					</div>
+				</div>
+				<script>
+					     document.addEventListener('DOMContentLoaded', function () {
+					              const button = document.querySelector('.hidden-button');
+					              const correctPassword = '12345'; // 替换为正确的密码
+					  
+					              button.addEventListener('click', function () {
+					                  const userInput = prompt('请输入密码:');
+					                  if (userInput === correctPassword) {
+					                      window.location.href = 'result.html'; // 跳转到目标页面
+					                  } else {
+					                      alert('密码错误，请重试。');
+					                  }
+					              });
+					          });
+				</script>
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.wk_teacher_item');
+    const leftArrow = document.querySelector('.wk_arrow.left');
+    const rightArrow = document.querySelector('.wk_arrow.right');
+    let currentIndex = 1;
+
+    function updatePositions() {
+        items.forEach((item, index) => {
+            item.classList.remove('left', 'center', 'right');
+            if (index === currentIndex - 1) {
+                item.classList.add('left');
+            } else if (index === currentIndex) {
+                item.classList.add('center');
+            } else if (index === currentIndex + 1) {
+                item.classList.add('right');
+            }
+        });
+    }
+
+    function moveToNext() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updatePositions();
+    }
+
+    function moveToPrevious() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updatePositions();
+    }
+
+    // 自动轮播
+    let autoPlay = setInterval(moveToNext, 3000);
+
+    // 点击箭头切换
+    leftArrow.addEventListener('click', function () {
+        clearInterval(autoPlay);
+        moveToPrevious();
+        autoPlay = setInterval(moveToNext, 3000);
+    });
+
+    rightArrow.addEventListener('click', function () {
+        clearInterval(autoPlay);
+        moveToNext();
+        autoPlay = setInterval(moveToNext, 3000);
+    });
+
+    // 初始位置
+    updatePositions();
+});
+</script>
+				<script>
+					function scrollToTop() {
+						window.scrollTo({
+							top: 0,
+							behavior: 'smooth' // 平滑滚动到顶部
+						});
+					}
+				</script>
+
+				<script>
+					// 处理下拉菜单的点击逻辑
+					document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+						dropdown.addEventListener('click', function() {
+							const options = dropdown.nextElementSibling;
+							const isOpen = options.style.display === 'block';
+							document.querySelectorAll('.dropdown-options').forEach(opt => opt.style.display = 'none');
+							options.style.display = isOpen ? 'none' : 'block';
+						});
+					});
+
+					// 处理选项点击逻辑
+					document.querySelectorAll('.dropdown-options div').forEach(function(option) {
+						option.addEventListener('click', function() {
+							const dropdown = this.parentNode.previousElementSibling;
+							dropdown.textContent = this.textContent;
+							this.parentNode.style.display = 'none';
+						});
+					});
+
+					// 点击外部关闭下拉菜单
+					document.addEventListener('click', function(event) {
+						if (!event.target.classList.contains('dropdown')) {
+							document.querySelectorAll('.dropdown-options').forEach(opt => opt.style.display = 'none');
+						}
+					});
+				</script>
+				<script>
+				    document.querySelector('.submit-btn').addEventListener('click', function() {
+				        const grade = document.querySelector('#grade-dropdown').textContent.trim();
+				        const subject = document.querySelector('#subject-dropdown').textContent.trim();
+				        const frequency = document.querySelector('#frequency-dropdown').textContent.trim();
+				        const address = document.querySelector('input[placeholder="请输入辅导地址"]').value.trim();
+				        const requirements = document.querySelector('input[placeholder="请输入辅导要求（如教员性别不限等）"]').value.trim();
+				
+				        if (grade === '请选择学生年级' || subject === '请选择辅导科目' || frequency === '请选择辅导次数' || 
+				            !address || !requirements) {
+				            alert('请完整填写所有信息');
+				            return;
+				        }
+				
+				        // 生成当前时间
+				        const timestamp = new Date().toLocaleString();
+				
+				        // 构造数据对象
+				        const data = {
+				            grade,
+				            subject,
+				            frequency,
+				            address,
+				            requirements,
+				            timestamp
+				        };
+				
+				        // 将数据保存到 localStorage
+				        let records = JSON.parse(localStorage.getItem('records')) || [];
+				        records.push(data);
+				        localStorage.setItem('records', JSON.stringify(records));
+				
+				        // 提示成功
+				        alert('预约成功！');
+				
+				        // 跳转到 result.html
+				        // window.location.href = 'result.html';
+				    });
+				</script>
+
+
+
+				<script type="text/javascript" src="static/js/jquery.min.js"></script>
+				<script src="static/js/cityjson.js"></script>
+				<script src="static/js/tanchu.js"></script>
+	</body>
+
+</html>
